@@ -1,7 +1,7 @@
+import 'package:ambiental_app/pages/onboarding.dart';
 import 'package:flutter/material.dart';
 import 'package:ambiental_app/mainPage.dart';
 import 'package:ambiental_app/pages/controlePage.dart';
-import 'package:ambiental_app/pages/introPage.dart';
 import 'package:ambiental_app/pages/Screens/perfil.dart';
 
 void main() {
@@ -16,7 +16,8 @@ class MyApp extends StatelessWidget {
         initialRoute: 'mainPage',
         routes: {
           'mainPage': (context) => MainPage(),
-          'introPage': (context) => IntroPage(),
+          "onBoarding": (context) => OnBoardingPage(),
+          //'introPage': (context) => IntroPage(),
           'controlePage': (context) => ControlePage(),
           'perfil': (context) => Perfil(),
         });

@@ -3,7 +3,6 @@
 //     final scanModel = scanModelFromJson(jsonString);
 
 import 'dart:convert';
-import 'package:meta/meta.dart';
 
 ScanModel scanModelFromJson(String str) => ScanModel.fromJson(json.decode(str));
 
@@ -13,7 +12,7 @@ class ScanModel {
   ScanModel({
     this.id,
     this.tipo,
-    @required this.valor,
+    this.valor,
   }) {
     if (this.valor.contains('http')) {
       this.tipo = 'http';

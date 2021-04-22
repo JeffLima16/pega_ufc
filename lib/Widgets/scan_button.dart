@@ -9,7 +9,7 @@ class ScanButton extends StatefulWidget {
 }
 
 class _ScanButtonState extends State<ScanButton> {
-  String _scanBarcode = "";
+  String _scanBarcode;
 
   @override
   void initState() {
@@ -58,6 +58,6 @@ _launchURL(String barcodeScanRes) async {
   if (await canLaunch(barcodeScanRes)) {
     await launch(barcodeScanRes);
   } else {
-    throw 'Could not launch $barcodeScanRes';
+    throw 'Could not launch';
   }
 }

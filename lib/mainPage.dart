@@ -19,7 +19,7 @@ class MainPage extends StatelessWidget {
               ),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, 'introPage');
+                  Navigator.pushNamed(context, 'onBoarding');
                 },
                 style: ElevatedButton.styleFrom(
                   primary: Colors.green[400],
