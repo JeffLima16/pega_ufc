@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Perfil extends StatelessWidget {
   @override
@@ -17,8 +18,11 @@ class Perfil extends StatelessWidget {
                 radius: 70,
                 backgroundImage: AssetImage('assets/img/user2.png'),
               ),
+              SizedBox(
+                height: 15,
+              ),
               Text(
-                'Jefferson',
+                'Aluno UFC',
                 style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.w700,
@@ -50,41 +54,22 @@ class Perfil extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Container(
+                child: GestureDetector(
+                  onTap: () {},
+                  child: Container(
                     decoration: BoxDecoration(
                         color: Colors.green[300],
                         borderRadius: BorderRadius.all(Radius.circular(30))),
                     height: 50,
                     width: 500,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          'Perfil',
-                          style: TextStyle(
-                            fontSize: 24,
-                            fontWeight: FontWeight.w400,
-                            color: Colors.white,
-                          ),
+                    child: Center(
+                      child: Text(
+                        'Games',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w400,
+                          fontSize: 24,
                         ),
-                      ],
-                    )),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: Colors.green[300],
-                      borderRadius: BorderRadius.all(Radius.circular(30))),
-                  height: 50,
-                  width: 500,
-                  child: Center(
-                    child: Text(
-                      'Em breve',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w400,
-                        fontSize: 24,
                       ),
                     ),
                   ),
@@ -92,19 +77,61 @@ class Perfil extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: Colors.green[300],
-                      borderRadius: BorderRadius.all(Radius.circular(30))),
-                  height: 50,
-                  width: 500,
-                  child: Center(
-                    child: Text(
-                      'Em breve',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w400,
-                        fontSize: 24,
+                child: GestureDetector(
+                  onTap: () async {
+                    const url =
+                        'http://www.pega.ufc.br/projetos/fauna-flora-do-campus-do-pici/fauna-do-campus-do-pici/';
+                    if (await canLaunch(url)) {
+                      await launch(url, forceWebView: true);
+                    } else {
+                      throw 'Could not launch $url';
+                    }
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: Colors.green[300],
+                        borderRadius: BorderRadius.all(Radius.circular(30))),
+                    height: 50,
+                    width: 500,
+                    child: Center(
+                      child: Text(
+                        'Fauna UFC',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w400,
+                          fontSize: 24,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: GestureDetector(
+                  onTap: () async {
+                    const url =
+                        'http://www.pega.ufc.br/projetos/fauna-flora-do-campus-do-pici/flora-do-campus-do-pici/';
+                    if (await canLaunch(url)) {
+                      await launch(url, forceWebView: true);
+                    } else {
+                      throw 'Could not launch $url';
+                    }
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: Colors.green[300],
+                        borderRadius: BorderRadius.all(Radius.circular(30))),
+                    height: 50,
+                    width: 500,
+                    child: Center(
+                      child: Text(
+                        'Flora UFC',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w400,
+                          fontSize: 24,
+                        ),
                       ),
                     ),
                   ),

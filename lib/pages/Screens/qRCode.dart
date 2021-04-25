@@ -15,6 +15,7 @@ class QrCode extends StatelessWidget {
                 height: 300,
                 width: 300,
                 //color: Colors.green,
+                child: Image.asset("assets/img/qrCode.png"),
               ),
               ScanButton(),
             ],

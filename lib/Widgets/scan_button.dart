@@ -43,7 +43,6 @@ class _ScanButtonState extends State<ScanButton> {
               ElevatedButton(
                   style: ElevatedButton.styleFrom(
                       primary: Colors.green[400],
-                      shadowColor: Colors.grey,
                       padding:
                           EdgeInsets.symmetric(horizontal: 30, vertical: 20),
                       textStyle:
@@ -56,8 +55,10 @@ class _ScanButtonState extends State<ScanButton> {
 
 _launchURL(String barcodeScanRes) async {
   if (await canLaunch(barcodeScanRes)) {
-    await launch(barcodeScanRes);
+    await launch(barcodeScanRes, forceWebView: true);
   } else {
     throw 'Could not launch';
   }
 }
+
+//testar exibir mensagem
