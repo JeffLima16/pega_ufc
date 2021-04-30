@@ -22,7 +22,7 @@ class _ScanButtonState extends State<ScanButton> {
       barcodeScanRes = await FlutterBarcodeScanner.scanBarcode(
           "#F56645", "Cancelar", false, ScanMode.QR);
     } on PlatformException {
-      barcodeScanRes = 'Falhando para essa versão.';
+      barcodeScanRes = 'Não foi possível ler o QrCode';
     }
     if (!mounted) return;
 
@@ -53,11 +53,11 @@ class _ScanButtonState extends State<ScanButton> {
   }
 }
 
-_launchURL(String barcodeScanRes) async {
-  if (await canLaunch(barcodeScanRes)) {
-    await launch(barcodeScanRes, forceWebView: true);
+_launchURL(String url) async {
+  if (await canLaunch(url)) {
+    await launch(url);
   } else {
-    throw 'Could not launch';
+    return print("Código não encontrado $url");
   }
 }
 

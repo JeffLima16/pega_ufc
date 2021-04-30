@@ -82,7 +82,9 @@ class Perfil extends StatelessWidget {
                     const url =
                         'http://www.pega.ufc.br/projetos/fauna-flora-do-campus-do-pici/fauna-do-campus-do-pici/';
                     if (await canLaunch(url)) {
-                      await launch(url, forceWebView: true);
+                      await launch(
+                        url,
+                      );
                     } else {
                       throw 'Could not launch $url';
                     }
@@ -113,7 +115,7 @@ class Perfil extends StatelessWidget {
                     const url =
                         'http://www.pega.ufc.br/projetos/fauna-flora-do-campus-do-pici/flora-do-campus-do-pici/';
                     if (await canLaunch(url)) {
-                      await launch(url, forceWebView: true);
+                      await launch(url);
                     } else {
                       throw 'Could not launch $url';
                     }

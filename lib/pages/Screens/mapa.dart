@@ -13,7 +13,7 @@ class Mapa extends StatelessWidget {
               onTap: () async {
                 const url = 'http://www.pega.ufc.br/campus-sustentavel/';
                 if (await canLaunch(url)) {
-                  await launch(url, forceWebView: true);
+                  await launch(url);
                 } else {
                   throw 'Could not launch $url';
                 }

@@ -66,7 +66,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
         PageViewModel(
           title: "",
           body: "",
-          image: _buildFullscrenImage("onBoarding02.jpg"),
+          image: _buildFullscrenImage("onBoarding02.png"),
           decoration: pageDecoration.copyWith(
             contentMargin: const EdgeInsets.symmetric(horizontal: 16),
             fullScreen: true,
